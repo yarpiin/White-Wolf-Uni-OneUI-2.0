@@ -27,7 +27,7 @@
 
 #include "../../../kernel/sched/sched.h"
 
-#define DEFAULT_BOOT_ENABLE_MS (40000)		/* 40 s */
+#define DEFAULT_BOOT_ENABLE_MS (20000)		/* 20 s */
 #define NUM_OF_GROUP	2
 #define ATTR_COUNT	14
 
@@ -35,7 +35,7 @@
 #define BIG	1
 
 extern unsigned long arg_cpu_max_c2;
-static unsigned long arg_overclock = 0;
+static unsigned long arg_overclock = 1;
 
 static int read_overclock(char *oc)
 {

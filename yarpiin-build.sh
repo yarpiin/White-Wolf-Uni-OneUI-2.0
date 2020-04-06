@@ -31,34 +31,21 @@ TOOLCHAIN_DIR="/home/yarpiin/Android/Toolchains"
 
 # Kernel Details
 BASE_YARPIIN_VER="WHITE.WOLF.ONEUI.UNI.Q"
-VER=".006"
+VER=".007"
 PERM=".PERM"
 YARPIIN_VER="$BASE_YARPIIN_VER$VER"
 YARPIIN_PERM_VER="$BASE_YARPIIN_VER$VER$PERM"
+STAR_VER="S9."
+STAR2_VER="S9+."
+CROWN_VER="N9."
 
 # Vars
-export LOCALVERSION=-`echo $YARPIIN_VER`
 export CROSS_COMPILE="$TOOLCHAIN_DIR/aarch64-elf-gcc/bin/aarch64-elf-"
 export ARCH=arm64
 export SUBARCH=arm64
 export KBUILD_BUILD_USER=yarpiin
 export KBUILD_BUILD_HOST=kernel
 
-# Paths
-STARREPACK_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/G960/split_img"
-STAR2REPACK_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/G965/split_img"
-CROWNREPACK_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/N960/split_img"
-STARIMG_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/G960"
-STAR2IMG_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/G965"
-CROWNIMG_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/N960"
-
-# Permissive Paths
-PERM_STARREPACK_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/G960/split_img"
-PERM_STAR2REPACK_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/G965/split_img"
-PERM_CROWNREPACK_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/N960/split_img"
-PERM_STARIMG_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/G960"
-PERM_STAR2IMG_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/G965"
-PERM_CROWNIMG_DIR="/home/yarpiin/Android/Kernel/UNI/Build/Repack/N960"
 
 # Image dirs
 ZIP_MOVE="/home/yarpiin/Android/Kernel/UNI/Zip"
@@ -69,12 +56,6 @@ function clean_all {
 		if [ -f "$MODULES_DIR/*.ko" ]; then
 			rm `echo $MODULES_DIR"/*.ko"`
 		fi
-		cd $STARIMG_DIR
-		rm -rf zImage
-		rm -rf img.dtb
-		cd $STAR2IMG_DIR
-		rm -rf zImage
-		rm -rf img.dtb
 		cd $KERNEL_DIR
 		echo
 		make clean && make mrproper
@@ -82,92 +63,56 @@ function clean_all {
 
 function make_star_kernel {
 		echo
+        export LOCALVERSION=-`echo $STAR_VER$YARPIIN_VER`
 		make $STARDEFCONFIG
 		make $THREAD
-		cp -vr $ZIMAGE_DIR/$KERNEL $STARREPACK_DIR/G960.img-zImage
-        cp -vr $ZIMAGE_DIR/$DTBIMAGE $STARREPACK_DIR/G960.img-dt
-}
-
-function repack_star {
-		/bin/bash /home/yarpiin/Android/Kernel/UNI/Build/Repack/G960/repackimg.sh
-		cd $STARIMG_DIR
-		cp -vr image-new.img $KERNELFLASHER_DIR/G960.img
-		cd $KERNEL_DIR
+		cp -vr $ZIMAGE_DIR/$KERNEL $KERNELFLASHER_DIR/kernel/G960/zImage
+        cp -vr $ZIMAGE_DIR/$DTBIMAGE $KERNELFLASHER_DIR/kernel/G960/zImage-dtb
 }
 
 function make_star2_kernel {
 		echo
+        export LOCALVERSION=-`echo $STAR2_VER$YARPIIN_VER`
 		make $STAR2DEFCONFIG
 		make $THREAD
-		cp -vr $ZIMAGE_DIR/$KERNEL $STAR2REPACK_DIR/G965.img-zImage
-        cp -vr $ZIMAGE_DIR/$DTBIMAGE $STAR2REPACK_DIR/G965.img-dt
-}
-
-function repack_star2 {
-		/bin/bash /home/yarpiin/Android/Kernel/UNI/Build/Repack/G965/repackimg.sh
-		cd $STAR2IMG_DIR
-		cp -vr image-new.img $KERNELFLASHER_DIR/G965.img
-		cd $KERNEL_DIR
+		cp -vr $ZIMAGE_DIR/$KERNEL $KERNELFLASHER_DIR/kernel/G965/zImage
+        cp -vr $ZIMAGE_DIR/$DTBIMAGE $KERNELFLASHER_DIR/kernel/G965/zImage-dtb
 }
 
 function make_crown_kernel {
 		echo
+        export LOCALVERSION=-`echo $CROWN_VER$YARPIIN_VER`
 		make $CROWNDEFCONFIG
 		make $THREAD
-		cp -vr $ZIMAGE_DIR/$KERNEL $CROWNREPACK_DIR/N960.img-zImage
-        cp -vr $ZIMAGE_DIR/$DTBIMAGE $CROWNREPACK_DIR/N960.img-dt
-}
-
-function repack_crown {
-		/bin/bash /home/yarpiin/Android/Kernel/UNI/Build/Repack/N960/repackimg.sh
-		cd $CROWNIMG_DIR
-		cp -vr image-new.img $KERNELFLASHER_DIR/N960.img
-		cd $KERNEL_DIR
+		cp -vr $ZIMAGE_DIR/$KERNEL $KERNELFLASHER_DIR/kernel/N960/zImage
+        cp -vr $ZIMAGE_DIR/$DTBIMAGE $KERNELFLASHER_DIR/kernel/N960/zImage-dtb
 }
 
 function make_perm_star_kernel {
 		echo
+        export LOCALVERSION=-`echo $STAR_VER$YARPIIN_PERM_VER`
 		make $PERM_STARDEFCONFIG
 		make $THREAD
-		cp -vr $ZIMAGE_DIR/$KERNEL $PERM_STARREPACK_DIR/G960.img-zImage
-        cp -vr $ZIMAGE_DIR/$DTBIMAGE $PERM_STARREPACK_DIR/G960.img-dt
-}
-
-function repack_perm_star {
-		/bin/bash /home/yarpiin/Android/Kernel/UNI/Build/Repack/G960/repackimg.sh
-		cd $PERM_STARIMG_DIR
-		cp -vr image-new.img $KERNELFLASHER_DIR/G960.img
-		cd $KERNEL_DIR
+		cp -vr $ZIMAGE_DIR/$KERNEL $KERNELFLASHER_DIR/kernel/G960/zImage
+        cp -vr $ZIMAGE_DIR/$DTBIMAGE $KERNELFLASHER_DIR/kernel/G960/zImage-dtb
 }
 
 function make_perm_star2_kernel {
 		echo
+        export LOCALVERSION=-`echo $STAR2_VER$YARPIIN_PERM_VER`
 		make $PERM_STAR2DEFCONFIG
 		make $THREAD
-		cp -vr $ZIMAGE_DIR/$KERNEL $PERM_STAR2REPACK_DIR/G965.img-zImage
-        cp -vr $ZIMAGE_DIR/$DTBIMAGE $PERM_STAR2REPACK_DIR/G965.img-dt
-}
-
-function repack_perm_star2 {
-		/bin/bash /home/yarpiin/Android/Kernel/UNI/Build/Repack/G965/repackimg.sh
-		cd $PERM_STAR2IMG_DIR
-		cp -vr image-new.img $KERNELFLASHER_DIR/G965.img
-		cd $KERNEL_DIR
+		cp -vr $ZIMAGE_DIR/$KERNEL $KERNELFLASHER_DIR/kernel/G965/zImage
+        cp -vr $ZIMAGE_DIR/$DTBIMAGE $KERNELFLASHER_DIR/kernel/G965/zImage-dtb
 }
 
 function make_perm_crown_kernel {
 		echo
+        export LOCALVERSION=-`echo $CROWN_VER$YARPIIN_PERM_VER`
 		make $PERM_CROWNDEFCONFIG
 		make $THREAD
-		cp -vr $ZIMAGE_DIR/$KERNEL $PERM_CROWNREPACK_DIR/N960.img-zImage
-        cp -vr $ZIMAGE_DIR/$DTBIMAGE $PERM_CROWNREPACK_DIR/N960.img-dt
-}
-
-function repack_perm_crown {
-		/bin/bash /home/yarpiin/Android/Kernel/UNI/Build/Repack/N960/repackimg.sh
-		cd $PERM_CROWNIMG_DIR
-		cp -vr image-new.img $KERNELFLASHER_DIR/N960.img
-		cd $KERNEL_DIR
+		cp -vr $ZIMAGE_DIR/$KERNEL $KERNELFLASHER_DIR/kernel/N960/zImage
+        cp -vr $ZIMAGE_DIR/$DTBIMAGE $KERNELFLASHER_DIR/kernel/N960/zImage-dtb
 }
 
 function make_zip {
@@ -228,7 +173,6 @@ do
 case "$dchoice" in
 	y|Y)
 		make_star2_kernel
-        repack_star2
 		break
 		;;
 	n|N )
@@ -271,7 +215,6 @@ do
 case "$dchoice" in
 	y|Y)
 		make_star_kernel
-        repack_star
 		break
 		;;
 	n|N )
@@ -314,7 +257,6 @@ do
 case "$dchoice" in
 	y|Y)
 		make_crown_kernel
-        repack_crown
 		break
 		;;
 	n|N )

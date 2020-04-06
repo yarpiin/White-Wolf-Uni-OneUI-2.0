@@ -1,6 +1,22 @@
 
 Project name: White-Wolf-Uni-OneUI
 
+06/04/2020
+
+  * version 7
+  * exynos-hotplug: enable overclock v1 and reduce boot time to 20s (Slawek) [fcd14247b3eb]
+  * exynos-hotplug_governor: change disabled freq to 2314 for overclock level 1 (flar2) [a6f4afd744c5]
+  * exynos-hotplug_governor: use DUAL freq (2314) if hotplug is disabled (flar2) [af51725c697d]
+  * exynos-hotplug_governor: allow big cluster to run all out if governor disabled and overclocked (flar2) [d7dd79d5a5d4]
+  * exynos 9810: boost multicore performance a bit (flar2) [0337d35dcad5]
+  * exynos 9810: overclock CPU: (flar2) [8d724559a614]
+  * yarpiin_defconfig: bring back exynos ufc (Slawek) [b50ae57bbbe6]
+  * Revert "cpufreq: exynos: Ignore ECT max frequency limits" (AndreiLux) [5bc52c48ebaf]
+  * Revert "exynos9810: overclock " (Slawek) [fd8ff35ea551]
+  * Revert "exynos: gpu: r19p0 adjust thresholds" (Slawek) [d97b7da79930]
+  * Revert "block: introduce Anxiety I/O scheduler" (tytydraco) [41e34763935d]
+  * Revert "yarpiin_defconfig: enable Anxiety" (Slawek) [55fce25c5809]
+
 03/04/2020
 
   * version 6

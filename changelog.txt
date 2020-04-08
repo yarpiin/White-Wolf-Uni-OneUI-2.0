@@ -1,6 +1,12 @@
 
 Project name: White-Wolf-Uni-OneUI
 
+08/04/2020
+
+  * version 8
+  * import N960FXXU5DTCA OSRC (farovitus) [7a1bb646c277]
+  * build: update for lazyflasher (Slawek) [07429e3c6063]
+
 06/04/2020
 
   * version 7

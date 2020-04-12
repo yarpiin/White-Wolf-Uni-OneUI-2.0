@@ -1,6 +1,16 @@
 
 Project name: White-Wolf-Uni-OneUI
 
+12/04/2020
+
+  * version 9
+  * exynos 9810: change oc to option 2 and raise triple freq (Slawek) [a5ea43b75959]
+  * fs: sync: if we're blocking fsync then we should also avoid getting the file descriptor, avoiding some overhead (Francisco Franco) [c97263af4c703]
+  * fs: sync: add fsync on/off support. (Francisco Franco) [f5f761b2e8c12]
+  * yarpiin_defconfig: enable f2fs (Slawek) [7333eefb48737]
+  * mm: remove nr_pages argument from pagevec_lookup_{,range}_tag() (jankara) [1a86f07bfd072]
+  * mm: add variant of pagevec_lookup_range_tag() taking number of pages (Jan Kara) [d7087ff6e7603]
+
 08/04/2020
 
   * version 8

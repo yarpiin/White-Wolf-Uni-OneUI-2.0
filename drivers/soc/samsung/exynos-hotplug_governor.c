@@ -35,7 +35,7 @@
 #define BIG	1
 
 extern unsigned long arg_cpu_max_c2;
-static unsigned long arg_overclock = 1;
+static unsigned long arg_overclock = 2;
 
 static int read_overclock(char *oc)
 {
@@ -1121,7 +1121,7 @@ static int __init exynos_hpgov_parse_dt(void)
 
 	} else if (arg_overclock == 2) {
 		exynos_hpgov.maxfreq_table[DUAL] = 2496000;
-		exynos_hpgov.maxfreq_table[TRIPLE] = 2002000;
+		exynos_hpgov.maxfreq_table[TRIPLE] = 2314000;
 		exynos_hpgov.maxfreq_table[QUAD] = 2002000;
 		exynos_hpgov.maxfreq_table[DISABLE] = max_freq;
 

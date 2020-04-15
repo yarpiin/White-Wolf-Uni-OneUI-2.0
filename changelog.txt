@@ -1,6 +1,44 @@
 
 Project name: White-Wolf-Uni-OneUI
 
+15/04/2020
+
+  * version 10
+  * Linux 4.9.219 (Greg Kroah-Hartman) [5188957a315f]
+  * drm/msm: Use the correct dma_sync calls in msm_gem (Rob Clark) [dca98889e8e5]
+  * drm_dp_mst_topology: fix broken drm_dp_sideband_parse_remote_dpcd_read() (Hans Verkuil) [4c1baea0dde8]
+  * usb: dwc3: don't set gadget->is_otg flag (Roger Quadros) [20fefd823400]
+  * arm64: Fix size of __early_cpu_boot_status (Arun KS) [f903a196c4a5]
+  * drm/msm: stop abusing dma_map/unmap for cache (Rob Clark) [ed0445d8826c]
+  * clk: qcom: rcg: Return failure for RCG update (Taniya Das) [fcd93da7fe09]
+  * RDMA/cm: Update num_paths in cma_resolve_iboe_route error flow (Avihai Horon) [1076d21f94c7]
+  * Bluetooth: RFCOMM: fix ODEBUG bug in rfcomm_dev_ioctl (Qiujun Huang) [5cc241a4bb92]
+  * ceph: canonicalize server path in place (Ilya Dryomov) [1cccf9da6ade]
+  * ceph: remove the extra slashes in the server path (Xiubo Li) [68d87669cb58]
+  * IB/hfi1: Fix memory leaks in sysfs registration and unregistration (Kaike Wan) [792a15d446dd]
+  * IB/hfi1: Call kobject_put() when kobject_init_and_add() fails (Kaike Wan) [95372fb5f8f5]
+  * ASoC: jz4740-i2s: Fix divider written at incorrect offset in register (Paul Cercueil) [2bc7f1dd544b]
+  * tools/accounting/getdelays.c: fix netlink attribute length (David Ahern) [002e9efb463b]
+  * random: always use batched entropy for get_random_u{32,64} (Jason A. Donenfeld) [5f27cae3002c]
+  * net: phy: micrel: kszphy_resume(): add delay after genphy_resume() before accessing PHY registers (Oleksij Rempel) [1ee3d823b83e]
+  * slcan: Don't transmit uninitialized stack data in padding (Richard Palethorpe) [925c631e84d7]
+  * net: stmmac: dwmac1000: fix out-of-bounds mac address reg setting (Jisheng Zhang) [d0eae22fbe98]
+  * net: dsa: bcm_sf2: Ensure correct sub-node is parsed (Florian Fainelli) [02b303a93906]
+  * mm: mempolicy: require at least one nodeid for MPOL_PREFERRED (Randy Dunlap) [c5544e72014c]
+  * padata: always acquire cpu_hotplug_lock before pinst->lock (Daniel Jordan) [b1d47d77e039]
+  * net: dsa: tag_brcm: Fix skb->fwd_offload_mark location (Florian Fainelli) [02c0b89493e7]
+  * coresight: do not use the BIT() macro in the UAPI header (Eugene Syromiatnikov) [1b62259d8e90]
+  * blk-mq: Allow blocking queue tag iter callbacks (Keith Busch) [d4d74449367e]
+  * blk-mq: sync the update nr_hw_queues with blk_mq_queue_tag_busy_iter (Jianchao Wang) [f530afb974c2]
+  * drm/etnaviv: replace MMU flush marker with flush sequence (Lucas Stach) [4eaf2e4b5e1e]
+  * sctp: fix possibly using a bad saddr with a given dst (Marcelo Ricardo Leitner) [de29be710268]
+  * sctp: fix refcount bug in sctp_wfree (Qiujun Huang) [a6a758c223d2]
+  * net, ip_tunnel: fix interface lookup with no key (William Dauchy) [4f1640e3f156]
+  * ipv4: fix a RCU-list lock in fib_triestat_seq_show (Qian Cai) [32006be2449f]
+  * drm/bochs: downgrade pci_request_region failure from error to warning (Gerd Hoffmann) [4d0cdd699528]
+  * l2tp: fix race between l2tp_session_delete() and l2tp_tunnel_closeall() (Guillaume Nault) [e8b9cf5574e8]
+  * l2tp: ensure sessions are freed after their PPPOL2TP socket (Guillaume Nault) [8aeff206767e]
+
 12/04/2020
 
   * version 9

@@ -1,6 +1,12 @@
 
 Project name: White-Wolf-Uni-OneUI
 
+20/04/2020
+
+  * version 11
+  * yarpiin_defconfig: regen (Slawek) [e4de643f0d76]
+  * import G96xFXXU8DTC5 OSRC (Slawek) [d473794f754e]
+
 15/04/2020
 
   * version 10

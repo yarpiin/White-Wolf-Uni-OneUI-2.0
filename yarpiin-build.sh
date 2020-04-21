@@ -49,7 +49,7 @@ export KBUILD_BUILD_HOST=kernel
 
 # Image dirs
 ZIP_MOVE="/home/yarpiin/Android/Kernel/UNI/Zip"
-ZIMAGE_DIR="$KERNEL_DIR/arch/arm64/boot"
+ZIMAGE_DIR="$KERNEL_DIR/out/arch/arm64/boot"
 
 # Functions
 function clean_all {
@@ -59,13 +59,21 @@ function clean_all {
 		cd $KERNEL_DIR
 		echo
 		make clean && make mrproper
+        rm -rf out/
 }
 
 function make_star_kernel {
 		echo
         export LOCALVERSION=-`echo $STAR_VER$YARPIIN_VER`
-		make $STARDEFCONFIG
-		make $THREAD
+        make O=out ARCH=arm64 $STARDEFCONFIG
+
+        PATH="/home/yarpiin/Android/Toolchains/Clang/bin:/home/yarpiin/Android/Toolchains/aarch64-linux-android-4.9/bin:${PATH}" \
+        make -j$(nproc --all) O=out \
+                      ARCH=arm64 \
+                      CC=clang \
+                      CLANG_TRIPLE=aarch64-linux-gnu- \
+                      CROSS_COMPILE=aarch64-linux-android-
+
 		cp -vr $ZIMAGE_DIR/$KERNEL $KERNELFLASHER_DIR/Kernel/G960/zImage
         cp -vr $ZIMAGE_DIR/$DTBIMAGE $KERNELFLASHER_DIR/Kernel/G960/dtb.img
 }
@@ -73,8 +81,15 @@ function make_star_kernel {
 function make_star2_kernel {
 		echo
         export LOCALVERSION=-`echo $STAR2_VER$YARPIIN_VER`
-		make $STAR2DEFCONFIG
-		make $THREAD
+        make O=out ARCH=arm64 $STAR2DEFCONFIG
+
+        PATH="/home/yarpiin/Android/Toolchains/Clang/bin:/home/yarpiin/Android/Toolchains/aarch64-linux-android-4.9/bin:${PATH}" \
+        make -j$(nproc --all) O=out \
+                      ARCH=arm64 \
+                      CC=clang \
+                      CLANG_TRIPLE=aarch64-linux-gnu- \
+                      CROSS_COMPILE=aarch64-linux-android-
+
 		cp -vr $ZIMAGE_DIR/$KERNEL $KERNELFLASHER_DIR/Kernel/G965/zImage
         cp -vr $ZIMAGE_DIR/$DTBIMAGE $KERNELFLASHER_DIR/Kernel/G965/dtb.img
 }
@@ -82,8 +97,15 @@ function make_star2_kernel {
 function make_crown_kernel {
 		echo
         export LOCALVERSION=-`echo $CROWN_VER$YARPIIN_VER`
-		make $CROWNDEFCONFIG
-		make $THREAD
+        make O=out ARCH=arm64 $CROWNDEFCONFIG
+
+        PATH="/home/yarpiin/Android/Toolchains/Clang/bin:/home/yarpiin/Android/Toolchains/aarch64-linux-android-4.9/bin:${PATH}" \
+        make -j$(nproc --all) O=out \
+                      ARCH=arm64 \
+                      CC=clang \
+                      CLANG_TRIPLE=aarch64-linux-gnu- \
+                      CROSS_COMPILE=aarch64-linux-android-
+
 		cp -vr $ZIMAGE_DIR/$KERNEL $KERNELFLASHER_DIR/Kernel/N960/zImage
         cp -vr $ZIMAGE_DIR/$DTBIMAGE $KERNELFLASHER_DIR/Kernel/N960/dtb.img
 }

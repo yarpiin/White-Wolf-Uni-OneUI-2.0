@@ -391,9 +391,8 @@ LINUXINCLUDE	+= $(filter-out $(LINUXINCLUDE),$(USERINCLUDE))
 KBUILD_AFLAGS   := -D__ASSEMBLY__
 KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fno-strict-aliasing -fno-common -fshort-wchar \
-		   -Wno-implicit-function-declaration -Wno-memset-elt-size -Wno-pointer-compare -Wno-switch-bool -Wno-bool-operation -Wno-sizeof-pointer-div -Wno-packed-not-aligned -Wno-array-bounds \
-		   -Wno-format-security -Wno-misleading-indentation -Wno-switch-unreachable -Wno-sizeof-pointer-memaccess -Wno-duplicate-decl-specifier -Wno-logical-not-parentheses -Wno-stringop-overflow -Wno-unused-variable \
-           	   -Wno-maybe-uninitialized -Wno-restrict \
+		   -Werror-implicit-function-declaration \
+		   -Wno-format-security \
 		   -Werror \
 		   -std=gnu89
 KBUILD_CPPFLAGS := -D__KERNEL__

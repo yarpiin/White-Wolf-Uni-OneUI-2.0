@@ -64,6 +64,11 @@ Module.symvers
 /tar-install/
 
 #
+# out directory
+#
+/out/
+
+#
 # git files that we don't want to ignore even if they are dot-files
 #
 !.gitignore

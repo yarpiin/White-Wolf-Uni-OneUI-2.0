@@ -1629,7 +1629,7 @@ static ssize_t set_kernel_sysfs_user_max_clock(struct kobject *kobj, struct kobj
 
 	if (sscanf(buf, "%d", &clock)) {
 
-		if (clock == 260000 || clock == 299000 || clock == 338000 || clock == 455000 || clock == 546000
+		if (clock == 260000 || clock == 299000 || clock == 338000 || clock == 385000 || clock == 455000 || clock == 546000
 				|| clock == 572000 || clock == 598000) {
 
 			platform->gpu_max_clock = clock;
@@ -1661,7 +1661,7 @@ static ssize_t set_kernel_sysfs_user_min_clock(struct kobject *kobj, struct kobj
 
 	if (sscanf(buf, "%d", &clock)) {
 
-		if (clock == 260000 || clock == 299000 || clock == 338000 || clock == 455000 || clock == 546000
+		if (clock == 260000 || clock == 299000 || clock == 338000 || clock == 385000 || clock == 455000 || clock == 546000
 				|| clock == 572000 || clock == 598000) {
 
 			platform->gpu_min_clock = clock;

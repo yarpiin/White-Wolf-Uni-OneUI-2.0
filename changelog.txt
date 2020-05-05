@@ -1,6 +1,16 @@
 
 Project name: White-Wolf-Uni-OneUI
 
+05/05/2020
+
+  * version 14
+  * net/wireguard: update repositories (Slawek) [67e41863951c]
+  * Revert "sched/fair: Fix rounding bug for asym packing" (Vincent Guittot) [44c160ef2165]
+  * Revert "sched/fair: skip frequency updates if CPU about to idle" (Joel Fernandes) [4a067a049058]
+  * Revert "sched/fair: Fix issue where frequency update not skipped" (Joel Fernandes) [f43c8cb67962]
+  * Revert "tick: don't update idle time if cpu offline" (FAROVITUS) [133aac93d4db]
+  * Revert "sched/fair: Trigger asym_packing during idle load balance" (Vincent Guittot) [ecc7d3e93e06]
+
 04/05/2020
 
   * version 13

@@ -1,6 +1,30 @@
 
 Project name: White-Wolf-Uni-OneUI
 
+07/05/2020
+
+  * version 15
+  * Revert "BACKPORT: sched/fair: Don't move tasks to lower capacity CPUs unless" (Chris Redpath) [f4a82ed8469f]
+  * Linux 4.9.222 (Greg Kroah-Hartman) [ffd00fbcb560]
+  * drm/qxl: qxl_release use after free (Vasily Averin) [39c4c5c7389d]
+  * selinux: properly handle multiple messages in selinux_netlink_send() (Paul Moore) [6affa87d168d]
+  * dmaengine: dmatest: Fix iteration non-stop logic (Andy Shevchenko) [e66e9687af44]
+  * nfs: Fix potential posix_acl refcnt leak in nfs3_set_acl (Andreas Gruenbacher) [f92f2904141c]
+  * ALSA: opti9xx: shut up gcc-10 range warning (Arnd Bergmann) [a4dc992b83af]
+  * iommu/amd: Fix legacy interrupt remapping for x2APIC-enabled system (Suravee Suthikulpanit) [a6d4fb7c70db]
+  * vfio/type1: Fix VA->PA translation for PFNMAP VMAs in vaddr_get_pfn() (Sean Christopherson) [f9980f56a160]
+  * RDMA/mlx4: Initialize ib_spec on the stack (Alaa Hleihel) [7fbf5316b9ea]
+  * dm verity fec: fix hash block number in verity_fec_decode (Sunwook Eom) [779bb3625fed]
+  * PM: hibernate: Freeze kernel threads in software_resume() (Dexuan Cui) [9199193d8dc0]
+  * PM: ACPI: Output correct message on target power state (Kai-Heng Feng) [9802ad3804a5]
+  * ALSA: pcm: oss: Place the plugin buffer overflow checks correctly (Takashi Iwai) [a448f0b3bd43]
+  * ALSA: hda/hdmi: fix without unlocked before return (Wu Bo) [cd8f76d11301]
+  * btrfs: fix block group leak when removing fails (Xiyu Yang) [a05346de2c80]
+  * drm/qxl: qxl_release leak in qxl_hw_surface_alloc() (Vasily Averin) [9148b1aa18f8]
+  * drm/qxl: qxl_release leak in qxl_draw_dirty_fb() (Vasily Averin) [c1dcdab561e5]
+  * drm/edid: Fix off-by-one in DispID DTD pixel clock (Ville Syrjälä) [9669600d6ece]
+  * ext4: fix special inode number checks in __ext4_iget() (Theodore Ts'o) [fb57d4e291ff]
+
 05/05/2020
 
   * version 14

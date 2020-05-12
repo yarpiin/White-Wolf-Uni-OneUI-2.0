@@ -1,6 +1,31 @@
 
 Project name: White-Wolf-Uni-OneUI
 
+12/05/2020
+
+  * version 16
+  * kernel: boost: Reduce boost time when userspace launches an app (Slawek) [b5534dc629c8]
+  * Revert "sched/tune: Hard-code top-app's stune boost to 1" (Sultan Alsawaf) [2ddb623bcf05]
+  * Linux 4.9.223 (Greg Kroah-Hartman) [270f791a316d]
+  * mac80211: add ieee80211_is_any_nullfunc() (Thomas Pedersen) [9bb734d994db]
+  * ALSA: hda: Match both PCI ID and SSID for driver blacklist (Takashi Iwai) [fccabc88ae14]
+  * sctp: Fix SHUTDOWN CTSN Ack in the peer restart case (Jere Leppänen) [0bd74760f0f9]
+  * MIPS: perf: Remove incorrect odd/even counter handling for I6400 (Marcin Nowakowski) [882a1e6b4d3d]
+  * xprtrdma: Fix backchannel allocation of extra rpcrdma_reps (Chuck Lever) [c8cd218535ae]
+  * net: systemport: suppress warnings on failed Rx SKB allocations (Doug Berger) [c63068143ed2]
+  * net: bcmgenet: suppress warnings on failed Rx SKB allocations (Doug Berger) [8e6b5210bdd9]
+  * lib/mpi: Fix building for powerpc with clang (Nathan Chancellor) [566ff2996fdc]
+  * net: dsa: b53: Rework ARL bin logic (Florian Fainelli) [34e95e9f1f24]
+  * scripts/config: allow colons in option strings for sed (Jeremie Francois (on alpha)) [4323eedde884]
+  * cifs: protect updating server->dstaddr with a spinlock (Ronnie Sahlberg) [3f9b0d0f1903]
+  * net: stmmac: Fix sub-second increment (Julien Beraud) [8256b97f1494]
+  * wimax/i2400m: Fix potential urb refcnt leak (Xiyu Yang) [5e76d93ec909]
+  * ASoC: sgtl5000: Fix VAG power-on handling (Sebastian Reichel) [de37cb96b7de]
+  * selftests/ipc: Fix test failure seen after initial test run (Tyler Hicks) [bca8fdc1cc58]
+  * iio:ad7797: Use correct attribute_group (YueHaibing) [855341a4ea32]
+  * powerpc/pci/of: Parse unassigned resources (Alexey Kardashevskiy) [f4432845cc96]
+  * vhost: vsock: kick send_pkt worker once device is started (Jia He) [619453716db4]
+
 07/05/2020
 
   * version 15

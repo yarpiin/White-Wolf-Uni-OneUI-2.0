@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 4.9.219 Kernel Configuration
+# Linux/arm64 4.9.223 Kernel Configuration
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -600,6 +600,7 @@ CONFIG_COREDUMP=y
 CONFIG_COMPAT=y
 CONFIG_KUSER_HELPERS=y
 CONFIG_KEYS_COMPAT=y
+# CONFIG_COMPAT_VDSO is not set
 CONFIG_CROSS_COMPILE_ARM32=""
 
 #

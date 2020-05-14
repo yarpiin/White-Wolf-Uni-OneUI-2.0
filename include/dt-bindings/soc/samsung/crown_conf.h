@@ -1,7 +1,7 @@
 /*
  *
  * Automatically generated file; DO NOT EDIT.
- * Linux/arm64 4.9.219 Kernel Configuration
+ * Linux/arm64 4.9.223 Kernel Configuration
  *
  */
 #define CONFIG_RING_BUFFER 1
@@ -43,7 +43,6 @@
 #define CONFIG_USB_STORAGE_DETECT 1
 #define CONFIG_NETWORK_FILESYSTEMS 1
 #define CONFIG_MALI_EXPERT 1
-#define CONFIG_CRYPTO_FIPS 1
 #define CONFIG_LEDS_MAX77705_RGB 1
 #define CONFIG_ARM64_VA_BITS 39
 #define CONFIG_EXT4_ENCRYPTION 1

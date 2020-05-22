@@ -1,7 +1,7 @@
 /*
  *
  * Automatically generated file; DO NOT EDIT.
- * Linux/arm64 4.9.223 Kernel Configuration
+ * Linux/arm64 4.9.224 Kernel Configuration
  *
  */
 #define CONFIG_RING_BUFFER 1
@@ -267,6 +267,7 @@
 #define CONFIG_HALL 1
 #define CONFIG_EXYNOS_DTBH_SUBTYPE_CODE 0x217584da
 #define CONFIG_IP_PNP 1
+#define CONFIG_BLOCK_UNWANTED_FILES 1
 #define CONFIG_UFS_SRPMB 1
 #define CONFIG_RTC_INTF_PROC 1
 #define CONFIG_SENSORS_SSP_IRDATA_FOR_CAMERA 1

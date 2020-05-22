@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Linux/arm64 4.9.223 Kernel Configuration
+# Linux/arm64 4.9.224 Kernel Configuration
 #
 CONFIG_ARM64=y
 CONFIG_64BIT=y
@@ -5412,6 +5412,7 @@ CONFIG_NLS_ISO8859_1=y
 # CONFIG_NLS_MAC_TURKISH is not set
 CONFIG_NLS_UTF8=y
 # CONFIG_DLM is not set
+CONFIG_BLOCK_UNWANTED_FILES=y
 # CONFIG_VIRTUALIZATION is not set
 
 #

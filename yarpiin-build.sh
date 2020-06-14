@@ -31,7 +31,7 @@ TOOLCHAIN_DIR="/home/yarpiin/Android/Toolchains"
 
 # Kernel Details
 BASE_YARPIIN_VER="WHITE.WOLF.ONEUI.UNI.Q"
-VER=".019"
+VER=".020"
 PERM=".PERM"
 YARPIIN_VER="$BASE_YARPIIN_VER$VER"
 YARPIIN_PERM_VER="$BASE_YARPIIN_VER$VER$PERM"
@@ -40,7 +40,6 @@ STAR2_VER="S9+."
 CROWN_VER="N9."
 
 # Vars
-export CROSS_COMPILE="$TOOLCHAIN_DIR/aarch64-elf-gcc/bin/aarch64-elf-"
 export ARCH=arm64
 export SUBARCH=arm64
 export KBUILD_BUILD_USER=yarpiin
